@@ -38,9 +38,9 @@ class Apunte(BaseModel):
     titulo: str = Field(description="Título breve que identifica el tema principal de la página del cuaderno.")
     materia: str = Field(description="Nombre de la materia escolar a la que corresponde el contenido.")
     resumen: str = Field(description="Resumen organizado de las ideas principales de la página, sin agregar información que no aparezca en ella.")
-    conceptos: list[Concepto] = Field(description="Conceptos importantes identificados en la página, cada uno con su explicación.")
-    tarjetas: list[Tarjeta] = Field(description="Tarjetas de pregunta y respuesta para ayudar a estudiar los contenidos de la página.")
-    examen: list[Pregunta] = Field(description="Preguntas de opción múltiple para evaluar la comprensión de los contenidos de la página.")
+    conceptos: list[Concepto] = Field(description="Conceptos importantes identificados en la página, cada uno con su explicación. Incluí al menos 3.")
+    tarjetas: list[Tarjeta] = Field(description="Tarjetas de pregunta y respuesta para ayudar a estudiar los contenidos de la página. Incluí al menos 5.")
+    examen: list[Pregunta] = Field(description="Preguntas de opción múltiple para evaluar la comprensión de los contenidos de la página. Incluí al menos 3.")
     dificultad: int = Field(description="Valor entero que representa la dificultad general de los contenidos de la página.")
 
     @field_validator("dificultad")
